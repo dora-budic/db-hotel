@@ -25,4 +25,4 @@
 
 2-4 > SELECT HOUR(created_at), COUNT(HOUR(created_at)) FROM `prenotazioni` GROUP BY HOUR(created_at) ORDER BY COUNT(HOUR(created_at)) DESC;
 
-
+2-5 > SELECT MAX(reservations) FROM (SELECT `ospite_id`, COUNT(ospite_id) AS reservations FROM `prenotazioni_has_ospiti` GROUP BY `ospite_id`) AS result;
