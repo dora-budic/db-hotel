@@ -15,3 +15,12 @@
 1-8 > SELECT COUNT(DISTINCT  ospite_id) FROM `paganti` WHERE `ospite_id` <> 'NULL';
 
 1-9 > SELECT SUM(beds) FROM `stanze`;
+
+
+2-1 > SELECT YEAR(date_of_birth), COUNT(id) FROM `ospiti` GROUP BY YEAR(date_of_birth);
+
+2-2 > SELECT `status`, SUM(price) FROM `pagamenti` GROUP BY `status`;
+
+2-3 > SELECT stanze.id, COUNT(prenotazioni.stanza_id) FROM stanze LEFT JOIN prenotazioni ON stanze.id = prenotazioni.stanza_id GROUP BY stanze.id;
+
+
