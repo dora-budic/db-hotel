@@ -23,4 +23,6 @@
 
 2-3 > SELECT stanze.id, COUNT(prenotazioni.stanza_id) FROM stanze LEFT JOIN prenotazioni ON stanze.id = prenotazioni.stanza_id GROUP BY stanze.id;
 
+2-4 > SELECT HOUR(created_at), COUNT(HOUR(created_at)) FROM `prenotazioni` GROUP BY HOUR(created_at) ORDER BY COUNT(HOUR(created_at)) DESC;
+
 
