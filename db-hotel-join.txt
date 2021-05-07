@@ -2,3 +2,4 @@
 
 3-2 > SELECT `prenotazioni_has_ospiti`.`prenotazione_id`,`ospiti`.* FROM `ospiti` INNER JOIN `prenotazioni_has_ospiti` ON `ospiti`.`id` = `prenotazioni_has_ospiti`.`ospite_id`;
 
+3-3 > SELECT `prenotazioni`.`id`, `prenotazioni`.`created_at`, `pagamenti`.`pagante_id`, `paganti`.`name`, `paganti`.`lastname`, `pagamenti`.`price` FROM `prenotazioni` INNER JOIN `pagamenti` ON `prenotazioni`.`id`= `pagamenti`.`prenotazione_id` INNER JOIN `paganti` ON `paganti`.`id` = `pagamenti`.`pagante_id` WHERE MONTH(`prenotazioni`.`created_at`) = 5 AND YEAR(`prenotazioni`.`created_at`) = 2018;
