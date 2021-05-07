@@ -7,3 +7,5 @@
 3-4 > SELECT `stanze`.`floor`, SUM(`pagamenti`.`price`) FROM `pagamenti` INNER JOIN `prenotazioni` ON `pagamenti`.`prenotazione_id`= `prenotazioni`.`id` INNER JOIN `stanze` ON `stanze`.`id` = `prenotazioni`.`stanza_id` WHERE `stanze`.`floor` = 1;
 
 3-5 > SELECT `pagamenti`.`prenotazione_id`, `paganti`.`name`, `paganti`.`lastname`,`paganti`.`address`, `ospiti`.`document_type`, `ospiti`.`document_number`, `pagamenti`.`price`, `pagamenti`.`status` FROM `pagamenti` INNER JOIN `paganti` ON `pagamenti`.`pagante_id` = `paganti`.`id` INNER JOIN `ospiti` ON `ospiti`.`id` = `paganti`.`ospite_id` WHERE `pagamenti`.`prenotazione_id` = 7;
+
+3-6 > SELECT `stanze`.`id` FROM `stanze` LEFT JOIN `prenotazioni` ON `stanze`.`id` = `prenotazioni`.`stanza_id` WHERE `prenotazioni`.`stanza_id` IS NULL;
