@@ -1,2 +1,4 @@
 3-1 > SELECT `ospiti`.`name`,`ospiti`.`lastname`, COUNT(`prenotazioni_has_ospiti`.`ospite_id`) AS prenotations FROM `ospiti` INNER JOIN `prenotazioni_has_ospiti` ON `ospiti`.`id` = `prenotazioni_has_ospiti`.`ospite_id` GROUP BY `ospiti`.`name`,`ospiti`.`lastname` HAVING prenotations > 2;
 
+3-2 > SELECT `prenotazioni_has_ospiti`.`prenotazione_id`,`ospiti`.* FROM `ospiti` INNER JOIN `prenotazioni_has_ospiti` ON `ospiti`.`id` = `prenotazioni_has_ospiti`.`ospite_id`;
+
