@@ -9,7 +9,36 @@
   </head>
   <body>
     <div id="root">
-      
+      <div class="list">
+        <table>
+          <thead>
+            <tr>
+              <th>Room number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="room in rooms">
+              <td @click="getInfo(room.id)"
+              :class="(room.id == currentId) ? 'active' : ''">
+              {{room.room_number}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info" v-if="selectedRoom">
+        <h3>Info - Room No. {{selectedRoom.room_number}}</h3>
+        <ul>
+          <li>ID: {{selectedRoom.id}}</li>
+          <li>Room number: {{selectedRoom.room_number}}</li>
+          <li>Floor: {{selectedRoom.floor}}</li>
+          <li>Beds: {{selectedRoom.beds}}</li>
+          <li>Created: {{selectedRoom.created_at}}</li>
+          <li>Updated: {{selectedRoom.updated_at}}</li>
+        </ul>
+      </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
